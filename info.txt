@@ -1,16 +1,15 @@
-❯ git config --global --add safe.directory "/media/sf_KALI_SHARED/INTELLIGENCE ARTIFICIAL/ai-dev"
+❯ git push -u origin main
 
-❯ git init
-git add .
-git commit -m "Upload do projeto completo da IA"
-git branch -M main
-
-Reinitialized existing Git repository in /media/sf_KALI_SHARED/INTELLIGENCE ARTIFICIAL/ai-dev/.git/
-warning: unable to unlink '/media/sf_KALI_SHARED/INTELLIGENCE ARTIFICIAL/ai-dev/.git/objects/maintenance.lock': Text file busy
-[main e0f9ac3] Upload do projeto completo da IA
- 1 file changed, 5 insertions(+), 20 deletions(-)
-❯ git remote add origin https://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@github.com/arwave188/intelligencefks.git
-
-error: remote origin already exists.
-╭─   /media/sf_KALI_SHARED/I/ai-dev   main                    17:51:59
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 2.38 KiB | 407.00 KiB/s, done.
+Total 7 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/arwave188/intelligencefks.git
+   e0f9ac3..65b3e87  main -> main
+branch 'main' set up to track 'origin/main'.
+╭─   /media/sf_KALI_SHARED/I/ai-dev   main !1                 18:19:28
 ╰─❯ 
+
