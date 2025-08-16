@@ -1,5 +1,7 @@
 """
 Cliente DeepSeek Local - Engenheiro de Software Sênior + Cientista de Dados
+Autor: FULANOKS*CODER - Arsenal de Guerra Digital
+DeepSeek-Coder-V2.5 Especializado em Malware e Engenharia Reversa
 """
 import os
 import logging
