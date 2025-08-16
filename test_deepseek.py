@@ -69,8 +69,9 @@ def test_project_creation():
         return False
 
 if __name__ == "__main__":
-    print("🚀 DeepSeek Local - Teste de Funcionalidades")
-    print("=" * 50)
+    print("🚀 DeepSeek-Coder-V2.5 Local - Teste de Funcionalidades")
+    print("📦 Modelo: DeepSeek-Coder-V2.5-Lite-Instruct (16B)")
+    print("=" * 60)
     
     # Executar testes
     tests = [
@@ -84,10 +85,11 @@ if __name__ == "__main__":
         if test():
             passed += 1
     
-    print("\n" + "=" * 50)
+    print("\n" + "=" * 60)
     print(f"📊 Resultados: {passed}/{len(tests)} testes passaram")
-    
+
     if passed == len(tests):
-        print("🎉 Todos os testes passaram! DeepSeek está pronto para o RunPod!")
+        print("🎉 Todos os testes passaram! DeepSeek-Coder-V2.5 está pronto para o RunPod!")
+        print("🚀 Modelo de última geração carregado com sucesso!")
     else:
         print("⚠️ Alguns testes falharam. Verifique a configuração.")

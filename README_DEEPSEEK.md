@@ -1,6 +1,7 @@
-# 🚀 DeepSeek Local - Engenheiro de Software IA
+# 🚀 DeepSeek-Coder-V2.5 Local - Engenheiro de Software IA
 
-IA especializada em programação, engenharia reversa e desenvolvimento de software sem restrições.
+IA de última geração especializada em programação, engenharia reversa e desenvolvimento de software sem restrições.
+Baseado no **DeepSeek-Coder-V2.5** - o modelo mais avançado para programação.
 
 ## ⚡ Instalação Rápida
 
@@ -20,9 +21,15 @@ python test_deepseek.py
 
 ```python
 from models.deepseek_local import gerar_codigo, revisar_codigo, criar_projeto
+from models.deepseek_local import EngenheiroDeSoftwareIA
 
-# Gerar código
+# Usar modelo padrão (Lite - 16B)
 codigo = gerar_codigo("Crie uma API REST em FastAPI")
+
+# Ou escolher modelo específico
+ia_base = EngenheiroDeSoftwareIA(modelo="base")    # 236B - Mais poderoso
+ia_lite = EngenheiroDeSoftwareIA(modelo="lite")    # 16B - Mais rápido
+ia_legacy = EngenheiroDeSoftwareIA(modelo="legacy") # 6.7B - Compatibilidade
 
 # Revisar código existente
 review = revisar_codigo(meu_codigo)
@@ -55,10 +62,11 @@ print(resultado)
 
 ## 🎛️ Configurações
 
-- **Modelo**: DeepSeek Coder 6.7B (quantizado 4-bit)
-- **VRAM**: ~4-6GB necessários
-- **Tokens**: Até 8192 tokens de contexto
+- **Modelo**: DeepSeek-Coder-V2.5-Lite (16B, quantizado 4-bit)
+- **VRAM**: ~8-12GB necessários (Lite) / ~40GB+ (Base)
+- **Tokens**: Até 32K tokens de contexto
 - **Temperatura**: 0.7 (padrão, ajustável)
+- **Versões**: Lite (16B), Base (236B), Legacy (6.7B)
 
 ## 🔥 Funcionalidades
 

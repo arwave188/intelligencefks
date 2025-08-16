@@ -1,7 +1,16 @@
-Username for 'https://github.com': arwave188
-Password for 'https://arwave188@github.com': 
-remote: Invalid username or token. Password authentication is not supported for Git operations.
-fatal: Authentication failed for 'https://github.com/arwave188/intelligencefks.git/'
-╭─   /media/sf_KALI_SHARED/I/ai-dev   main !1           10s  17:40:00
-╰─❯ 
+❯ git config --global --add safe.directory "/media/sf_KALI_SHARED/INTELLIGENCE ARTIFICIAL/ai-dev"
 
+❯ git init
+git add .
+git commit -m "Upload do projeto completo da IA"
+git branch -M main
+
+Reinitialized existing Git repository in /media/sf_KALI_SHARED/INTELLIGENCE ARTIFICIAL/ai-dev/.git/
+warning: unable to unlink '/media/sf_KALI_SHARED/INTELLIGENCE ARTIFICIAL/ai-dev/.git/objects/maintenance.lock': Text file busy
+[main e0f9ac3] Upload do projeto completo da IA
+ 1 file changed, 5 insertions(+), 20 deletions(-)
+❯ git remote add origin https://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@github.com/arwave188/intelligencefks.git
+
+error: remote origin already exists.
+╭─   /media/sf_KALI_SHARED/I/ai-dev   main                    17:51:59
+╰─❯ 
