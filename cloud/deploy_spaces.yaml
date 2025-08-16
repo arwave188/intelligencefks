@@ -1,0 +1,187 @@
+# HuggingFace Spaces Deployment Configuration
+# Para usar: 
+# 1. Crie um Space no HuggingFace Hub (tipo Docker)
+# 2. Clone o repositório do Space
+# 3. Copie os arquivos do ai-dev para o repositório do Space
+# 4. Configure as variáveis de ambiente nos Settings do Space
+# 5. Faça push para o repositório do Space
+
+# Arquivo README.md para o Space (criar separadamente)
+title: AI-Dev - IA Engenheira de Software
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+license: mit
+
+# Configurações do Space
+space_config:
+  # Tipo de hardware
+  hardware: cpu-basic  # ou cpu-upgrade, t4-small, t4-medium
+  
+  # Timeout (em segundos)
+  timeout: 3600
+  
+  # Configurações de build
+  build:
+    # Usar cache
+    cache: true
+    
+    # Timeout de build
+    timeout: 1800
+
+# Variáveis de ambiente (configurar nos Settings do Space)
+environment_variables:
+  # Porta para HuggingFace Spaces
+  PORT: "7860"
+  HOST: "0.0.0.0"
+  
+  # LLM Configuration
+  LLM_BACKEND: "openai"  # Configurar nos Secrets
+  LLM_MODEL: "gpt-4o-mini"
+  # OPENAI_API_KEY: configurar como Secret
+  # ANTHROPIC_API_KEY: configurar como Secret
+  # TOGETHER_API_KEY: configurar como Secret
+  
+  # Vector Database
+  VECTOR_BACKEND: "qdrant"
+  # QDRANT_URL: configurar como Secret
+  # QDRANT_API_KEY: configurar como Secret
+  # PINECONE_API_KEY: configurar como Secret
+  PINECONE_ENV: "us-east-1-aws"
+  PINECONE_INDEX: "ai-dev-code"
+  
+  # RAG Configuration
+  RAG_TOPK: "8"
+  RAG_MAX_PER_FILE: "3"
+  EMBEDDING_MODEL: "jinaai/jina-embeddings-v3"
+  
+  # Agent Configuration
+  MAX_ITERS: "5"
+  LOG_LEVEL: "INFO"
+  SANDBOX_TIMEOUT: "180"
+  
+  # Public URL (será definido automaticamente)
+  PUBLIC_BASE_URL: "https://your-username-ai-dev.hf.space"
+
+# Dockerfile específico para Spaces (criar como Dockerfile.spaces)
+dockerfile_content: |
+  FROM python:3.11-slim
+  
+  # Install system dependencies
+  RUN apt-get update && apt-get install -y \
+      build-essential \
+      git \
+      curl \
+      && rm -rf /var/lib/apt/lists/*
+  
+  # Create user
+  RUN useradd -m -u 1000 user
+  WORKDIR /app
+  
+  # Copy requirements and install
+  COPY requirements.txt .
+  RUN pip install --no-cache-dir -r requirements.txt
+  
+  # Copy application
+  COPY . .
+  RUN chown -R user:user /app
+  
+  # Switch to user
+  USER user
+  
+  # Set environment
+  ENV PYTHONPATH=/app
+  ENV PORT=7860
+  ENV HOST=0.0.0.0
+  
+  # Expose port
+  EXPOSE 7860
+  
+  # Start command
+  CMD ["bash", "cloud/start_web.sh"]
+
+# Instruções para deploy
+deployment_instructions: |
+  ## Deploy no HuggingFace Spaces
+  
+  ### 1. Criar Space
+  1. Acesse https://huggingface.co/new-space
+  2. Escolha nome: `ai-dev`
+  3. Tipo: `Docker`
+  4. Hardware: `CPU basic` (ou superior se necessário)
+  
+  ### 2. Configurar repositório
+  ```bash
+  # Clonar o Space
+  git clone https://huggingface.co/spaces/YOUR_USERNAME/ai-dev
+  cd ai-dev
+  
+  # Copiar arquivos do projeto
+  cp -r /path/to/ai-dev/* .
+  
+  # Usar Dockerfile específico para Spaces
+  cp cloud/Dockerfile.spaces Dockerfile
+  ```
+  
+  ### 3. Configurar Secrets
+  No painel do Space, vá em Settings > Repository secrets:
+  
+  - `OPENAI_API_KEY`: Sua chave da OpenAI
+  - `ANTHROPIC_API_KEY`: Sua chave da Anthropic (opcional)
+  - `QDRANT_URL`: URL do seu Qdrant Cloud
+  - `QDRANT_API_KEY`: Chave do Qdrant Cloud
+  - `PINECONE_API_KEY`: Chave do Pinecone (se usar)
+  
+  ### 4. Deploy
+  ```bash
+  git add .
+  git commit -m "Deploy AI-Dev to Spaces"
+  git push
+  ```
+  
+  ### 5. Acessar
+  Após o build, acesse: `https://YOUR_USERNAME-ai-dev.hf.space`
+  
+  ### 6. Testar
+  ```bash
+  curl https://YOUR_USERNAME-ai-dev.hf.space/health
+  ```
+
+# Interface web simples (opcional)
+gradio_interface: |
+  # Criar app.py para interface Gradio simples
+  import gradio as gr
+  import requests
+  import json
+  
+  def run_task(task_description, repo_url):
+      try:
+          response = requests.post(
+              "http://localhost:7860/tasks/run",
+              json={
+                  "task": task_description,
+                  "repo_url": repo_url,
+                  "max_iters": 5
+              }
+          )
+          return response.json()
+      except Exception as e:
+          return {"error": str(e)}
+  
+  # Interface
+  iface = gr.Interface(
+      fn=run_task,
+      inputs=[
+          gr.Textbox(label="Descrição da Tarefa", placeholder="Ex: Corrigir bug na função add"),
+          gr.Textbox(label="URL do Repositório", placeholder="https://github.com/user/repo.git")
+      ],
+      outputs=gr.JSON(label="Resultado"),
+      title="AI-Dev - IA Engenheira de Software",
+      description="Execute tarefas de desenvolvimento automaticamente"
+  )
+  
+  if __name__ == "__main__":
+      iface.launch(server_name="0.0.0.0", server_port=7860)

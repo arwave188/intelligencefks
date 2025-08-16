@@ -1,0 +1,101 @@
+{
+  "name": "AI-Dev Uncensored HTTPS",
+  "description": "AI Development Agent with HTTPS support and 100% uncensored operation",
+  "dockerImage": "python:3.11-slim",
+  "containerDiskInGb": 50,
+  "volumeInGb": 100,
+  "volumeMountPath": "/workspace",
+  "ports": [
+    {
+      "containerPort": 8000,
+      "type": "http",
+      "isPublic": true
+    },
+    {
+      "containerPort": 8443,
+      "type": "https",
+      "isPublic": true
+    }
+  ],
+  "env": [
+    {
+      "key": "RUNPOD_MODE",
+      "value": "true"
+    },
+    {
+      "key": "UNCENSORED_MODE", 
+      "value": "true"
+    },
+    {
+      "key": "DISABLE_CONTENT_FILTER",
+      "value": "true"
+    },
+    {
+      "key": "ALLOW_UNSAFE_CODE",
+      "value": "true"
+    },
+    {
+      "key": "BYPASS_SAFETY_CHECKS",
+      "value": "true"
+    },
+    {
+      "key": "DISABLE_MODERATION",
+      "value": "true"
+    },
+    {
+      "key": "SKIP_CONTENT_VALIDATION",
+      "value": "true"
+    },
+    {
+      "key": "ALLOW_ALL_REQUESTS",
+      "value": "true"
+    },
+    {
+      "key": "LLM_BACKEND",
+      "value": "openai"
+    },
+    {
+      "key": "VECTOR_BACKEND",
+      "value": "qdrant"
+    },
+    {
+      "key": "MODEL_TEMPERATURE",
+      "value": "0.9"
+    },
+    {
+      "key": "MODEL_TOP_P",
+      "value": "0.95"
+    },
+    {
+      "key": "MODEL_MAX_TOKENS",
+      "value": "4096"
+    },
+    {
+      "key": "ENABLE_SYSTEM_PROMPTS",
+      "value": "true"
+    },
+    {
+      "key": "HOST",
+      "value": "127.0.0.1"
+    },
+    {
+      "key": "PORT",
+      "value": "8080"
+    },
+    {
+      "key": "WORKERS",
+      "value": "4"
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "value": "your_openai_api_key_here"
+    },
+    {
+      "key": "ANTHROPIC_API_KEY",
+      "value": "your_anthropic_api_key_here"
+    }
+  ],
+  "startScript": "#!/bin/bash\ncd /workspace\ngit clone https://github.com/your-username/ai-dev.git .\nbash cloud/deploy_runpod.sh --start",
+  "category": "AI/ML",
+  "readme": "# AI-Dev Uncensored HTTPS\n\nDeploy your AI development agent with HTTPS support and 100% uncensored operation.\n\n## Setup\n\n1. Configure your API keys in the environment variables\n2. The container will automatically start with HTTPS on port 8443\n3. Access the API documentation at https://your-pod-ip:8443/docs\n\n## Features\n\n- ✅ 100% Uncensored Operation\n- ✅ HTTPS/SSL Support\n- ✅ GPU Acceleration\n- ✅ Multi-worker Setup\n- ✅ RunPod Optimized\n\n## Environment Variables\n\nRequired:\n- OPENAI_API_KEY: Your OpenAI API key\n- ANTHROPIC_API_KEY: Your Anthropic API key (optional)\n\nOptional:\n- LLM_BACKEND: openai, anthropic, local (default: openai)\n- VECTOR_BACKEND: qdrant, pinecone, local (default: qdrant)\n\n## Access\n\n- HTTPS API: https://your-pod-ip:8443\n- HTTP (redirects): http://your-pod-ip:8000\n- Documentation: https://your-pod-ip:8443/docs\n- Health Check: https://your-pod-ip:8443/health"
+}

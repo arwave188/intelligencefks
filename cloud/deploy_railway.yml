@@ -1,0 +1,93 @@
+# Railway Deployment Configuration
+# Para usar: railway up --config cloud/deploy_railway.yml
+
+version: "3"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # Configurações do serviço
+    environment:
+      # Porta obrigatória do Railway
+      PORT: ${{ PORT }}
+      
+      # LLM Configuration
+      LLM_BACKEND: ${{ LLM_BACKEND }}
+      LLM_MODEL: ${{ LLM_MODEL }}
+      OPENAI_API_KEY: ${{ OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ OPENAI_BASE_URL }}
+      ANTHROPIC_API_KEY: ${{ ANTHROPIC_API_KEY }}
+      TOGETHER_API_KEY: ${{ TOGETHER_API_KEY }}
+      FIREWORKS_API_KEY: ${{ FIREWORKS_API_KEY }}
+      DEEPINFRA_API_KEY: ${{ DEEPINFRA_API_KEY }}
+      
+      # Vector Database
+      VECTOR_BACKEND: ${{ VECTOR_BACKEND }}
+      QDRANT_URL: ${{ QDRANT_URL }}
+      QDRANT_API_KEY: ${{ QDRANT_API_KEY }}
+      PINECONE_API_KEY: ${{ PINECONE_API_KEY }}
+      PINECONE_ENV: ${{ PINECONE_ENV }}
+      PINECONE_INDEX: ${{ PINECONE_INDEX }}
+      
+      # RAG Configuration
+      RAG_TOPK: ${{ RAG_TOPK }}
+      RAG_MAX_PER_FILE: ${{ RAG_MAX_PER_FILE }}
+      EMBEDDING_MODEL: ${{ EMBEDDING_MODEL }}
+      
+      # Agent Configuration
+      MAX_ITERS: ${{ MAX_ITERS }}
+      LOG_LEVEL: ${{ LOG_LEVEL }}
+      SANDBOX_TIMEOUT: ${{ SANDBOX_TIMEOUT }}
+      
+      # Public URL (será definido automaticamente pelo Railway)
+      PUBLIC_BASE_URL: ${{ RAILWAY_PUBLIC_DOMAIN }}
+    
+    # Comando de inicialização
+    command: ["bash", "cloud/start_web.sh"]
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:$PORT/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # Volumes persistentes
+    volumes:
+      - runs_data:/app/.runs
+    
+    # Recursos
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: "1.0"
+        reservations:
+          memory: 1G
+          cpus: "0.5"
+
+volumes:
+  runs_data:
+    driver: local
+
+# Configurações específicas do Railway
+railway:
+  # Configurar domínio customizado (opcional)
+  # domain: your-domain.com
+  
+  # Variáveis de ambiente obrigatórias
+  required_vars:
+    - LLM_BACKEND
+    - VECTOR_BACKEND
+  
+  # Configurações de build
+  build:
+    # Usar cache do Docker
+    cache: true
+    
+    # Timeout de build (em segundos)
+    timeout: 1200
