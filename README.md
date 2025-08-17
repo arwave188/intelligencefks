@@ -1,38 +1,82 @@
-# 🔥 ARSENAL DE GUERRA - MALWARE MULTI-PLATAFORMA
+# 🔥 ARSENAL DE GUERRA - AI-DEV RUNPOD
 
-**DeepSeek-Coder-V2.5 + vLLM + Arsenal Completo de Malware**
+**DeepSeek-Coder-V2.5 + RunPod Pod + Continue VSCode - Deploy Automático**
 
-## ⚡ DEPLOY RÁPIDO
+## ⚡ DEPLOY 100% AUTOMÁTICO - 2 CLIQUES
 
-```bash
-# 1. RunPod
-docker build -f Dockerfile.vllm -t malware-arsenal .
+### 🎯 **1. RunPod (1 clique):**
+- Clique **START** no seu pod RunPod
+- Aguarde 2-3 minutos (download automático)
 
-# 2. Aguardar servidor subir automaticamente
-# Endpoint: http://localhost:8000
+### 🎯 **2. PC (1 clique):**
+- **Windows**: Duplo-clique `ARSENAL_AUTO.bat`
+- **Linux/Mac**: Execute `./arsenal_auto.sh`
 
-# 3. VSCode Continue
-# Copiar vscode/continue_config.json para ~/.continue/config.json
-```
+**🎉 PRONTO! Arsenal de Guerra 100% configurado!**
 
-## 🎯 COMANDOS DE GUERRA
+---
 
-### Windows
-- `/windows-ransomware` - Ransomware enterprise
-- `/windows-rat` - RAT com painel web  
-- `/windows-rootkit` - Rootkit kernel-level
+## 🔥 **MODO ULTRA-AUTOMÁTICO**
 
-### Linux  
-- `/linux-rootkit` - LKM com syscall hooking
-- `/linux-botnet` - Botnet distribuída
+**Você só precisa fazer:**
+1. **START** no RunPod
+2. **Executar script** no PC
+3. **Escrever no Continue VSCode**
 
-### macOS
-- `/macos-stealer` - Stealer Keychain + browsers
-- `/macos-gatekeeper-bypass` - Bypass completo
+**Tudo mais é AUTOMÁTICO!** 🚀
 
-### Android
-- `/android-dropper` - Play Store bypass
-- `/android-banking-trojan` - Overlay attacks
+## 🚀 **CARACTERÍSTICAS**
+
+### 🧠 **DeepSeek-Coder-V2.5 Inteligente**
+- **Auto-detecção GPU**: FULL 70B (A100/4090) ou LITE (GPUs menores)
+- **Contexto 32K tokens** - Análise de códigos extensos
+- **Sem censura** - Desenvolvimento irrestrito
+- **Especializado em código** - Otimizado para programação
+
+### ⚡ **RunPod Pod Otimizado**
+- **Deploy automático** - Um comando e está rodando
+- **GPU auto-detectada** - Configuração otimizada automática
+- **Cache persistente** - Modelo baixado uma vez
+- **URLs automáticas** - Proxy RunPod configurado automaticamente
+
+### 🎯 **Continue VSCode Nativo**
+- **Setup automático** - Script configura tudo
+- **Chat integrado** - Ctrl+Shift+P → Continue: Open Chat
+- **Autocompletar** - Sugestões em tempo real
+- **Comandos customizados** - /malware, /exploit, /bypass
+
+---
+
+## 🎯 **COMANDOS DE GUERRA CONTINUE**
+
+### 💀 **Comandos de Guerra TOTAIS**
+- `/malware` - Malware COMPLETO e funcional
+- `/exploit` - Exploits PROFISSIONAIS
+- `/bypass` - Bypass AVANÇADO de proteções
+- `/rootkit` - Rootkits KERNEL-LEVEL
+- `/ransomware` - Ransomware ENTERPRISE
+- `/botnet` - Botnets DISTRIBUÍDAS
+
+### 🖥️ **Arsenal Multi-Plataforma**
+- **Windows**: Ransomware, RAT, Rootkit, AMSI bypass
+- **Linux**: LKM rootkits, Botnets, Container escape
+- **macOS**: Stealer, Gatekeeper bypass, TCC bypass
+- **Android**: Banking trojans, Play Store bypass, RAT
+
+---
+
+## 🎯 **CONFIGURAÇÕES DE GUERRA MANTIDAS**
+
+✅ **TODAS as configurações de guerra estão MANTIDAS e MELHORADAS:**
+
+- **20+ comandos customizados** de malware
+- **System message SEM censura** total
+- **Prompts especializados** em guerra digital
+- **Configurações otimizadas** para desenvolvimento de malware
+- **Context providers** para análise de código
+- **Autocompletar** especializado em técnicas de evasão
+
+**🔥 Arsenal mais poderoso que antes! 🔥**
 
 ### Análise
 - `/malware-analysis` - Forense sem censura
