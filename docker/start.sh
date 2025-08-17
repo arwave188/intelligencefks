@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# vLLM Server Startup Script for RunPod Serverless Load Balancer
+# DeepSeek-Coder-V2.5 FULL (70B) + vLLM - Arsenal de Guerra
 # Autor: FULANOKS*CODER - Arsenal de Guerra Digital
+# APENAS DeepSeek COMPLETO 70B ou falha
 
 set -Eeuo pipefail
 
@@ -8,15 +9,12 @@ set -Eeuo pipefail
 # CONFIGURAÇÃO DE VARIÁVEIS DE AMBIENTE
 # ============================================================================
 
-# Modelo a ser carregado (prioridade: MODEL_ID > MODEL_NAME > default)
+# Modelo DeepSeek-Coder-V2.5 FULL 70B (prioridade: MODEL_ID > MODEL_NAME > default)
 MODEL_ID="${MODEL_ID:-${MODEL_NAME:-deepseek-ai/DeepSeek-Coder-V2-Instruct-70B}}"
 
 # Portas de serviço
 PORT="${PORT:-8000}"
 PORT_HEALTH="${PORT_HEALTH:-$PORT}"
-
-# Resolução de API Key (prioridade: API_KEY > DEEPSEEK_API_KEY > OPENAI_API_KEY)
-API_KEY_RESOLVED="${API_KEY:-${DEEPSEEK_API_KEY:-${OPENAI_API_KEY:-}}}"
 
 # ============================================================================
 # CONFIGURAÇÃO DE CACHE HUGGING FACE
@@ -30,7 +28,7 @@ export HF_DATASETS_CACHE=/app/cache
 mkdir -p /app/cache
 
 # ============================================================================
-# CONSTRUÇÃO DO COMANDO vLLM
+# CONSTRUÇÃO DO COMANDO vLLM PARA DEEPSEEK-V2.5 FULL (70B)
 # ============================================================================
 
 CMD=(
@@ -40,35 +38,34 @@ CMD=(
     --port "$PORT"
     --max-model-len 32768
     --dtype auto
-    # Ajustar parâmetros adicionais aqui conforme necessário:
-    # --gpu-memory-utilization 0.9
-    # --max-num-batched-tokens 8192
-    # --tensor-parallel-size 1
+    --gpu-memory-utilization 0.95
+    --max-num-batched-tokens 4096
+    --tensor-parallel-size 1
+    --trust-remote-code
 )
-
-# Adicionar API key se disponível
-if [[ -n "$API_KEY_RESOLVED" ]]; then
-    CMD+=(--api-key "$API_KEY_RESOLVED")
-fi
 
 # ============================================================================
 # RESUMO DA CONFIGURAÇÃO
 # ============================================================================
 
-echo "🔥 ARSENAL DE GUERRA - vLLM Server Starting"
-echo "=============================================="
+echo "🔥 ARSENAL DE GUERRA - DeepSeek-Coder-V2.5 FULL (70B)"
+echo "======================================================="
 echo "📦 Modelo: $MODEL_ID"
 echo "🌐 Porta: $PORT"
 echo "❤️ Health Port: $PORT_HEALTH"
-echo "🔑 API Key: $([ -n "$API_KEY_RESOLVED" ] && echo "✅ Configurada" || echo "❌ Não configurada")"
 echo "💾 Cache HF: $HF_HOME"
-echo "=============================================="
+echo "⚡ GPU Memory: 95%"
+echo "🧠 Max Context: 32K tokens"
+echo "🔥 Parâmetros: 70 Bilhões"
+echo "💀 Arsenal: Malware sem censura"
+echo "👨‍💻 Autor: FULANOKS*CODER"
+echo "======================================================="
 
 # ============================================================================
-# INICIALIZAÇÃO DO SERVIDOR vLLM
+# INICIALIZAÇÃO DO DEEPSEEK + vLLM
 # ============================================================================
 
-echo "🚀 Iniciando servidor vLLM..."
+echo "🚀 Iniciando DeepSeek-Coder-V2.5 FULL (70B) com vLLM..."
 echo "Comando: ${CMD[*]}"
 
 # Executar vLLM como PID 1 (primeiro plano)
