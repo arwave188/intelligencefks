@@ -1,61 +1,31 @@
 # ============================================================================
-# 🔥 ARSENAL DE GUERRA - REQUIREMENTS SIMPLIFICADO B200 180GB
-# Dependências essenciais sem conflitos - Máxima compatibilidade
-# Autor: FULANOKS*CODER - Arsenal de Guerra Digital
+# 🔥 ARSENAL DE GUERRA - REQUIREMENTS MÍNIMO B200 180GB
+# Apenas o essencial para funcionar
 # ============================================================================
 
-# ============================================================================
-# CORE ESSENCIAL - SEM VERSÕES ESPECÍFICAS PARA MÁXIMA COMPATIBILIDADE
-# ============================================================================
+# CORE
 torch
-torchvision
-torchaudio
-vllm
 transformers
 tokenizers
 accelerate
-bitsandbytes
 
-# ============================================================================
-# WEB SERVER ESSENCIAL
-# ============================================================================
+# WEB SERVER
 fastapi
 uvicorn[standard]
 httpx
-sse-starlette
-python-multipart
-websockets
 
-# ============================================================================
-# MACHINE LEARNING BÁSICO
-# ============================================================================
+# UTILITIES
 numpy
-scipy
-joblib
-threadpoolctl
-scikit-learn
-sentence-transformers
-datasets
-
-# ============================================================================
-# UTILITIES ESSENCIAIS
-# ============================================================================
 pydantic
 python-dotenv
 requests
-aiofiles
 rich
-tqdm
-psutil
 
-# ============================================================================
-# HUGGINGFACE & OPTIMIZATIONS
-# ============================================================================
+# HUGGINGFACE
 huggingface-hub
 safetensors
 
-# ============================================================================
-# OPCIONAL - INSTALAR SEPARADAMENTE SE NECESSÁRIO
-# ============================================================================
-# flash-attn  # Instalar manualmente se necessário
-# xformers    # Instalar manualmente se necessário
+# OPCIONAL
+# vllm
+# scikit-learn
+# datasets

@@ -79,7 +79,7 @@ export HF_HOME="$CACHE_DIR/huggingface"
 export TRANSFORMERS_CACHE="$CACHE_DIR/transformers"
 export HF_DATASETS_CACHE="$CACHE_DIR/datasets"
 export PIP_CACHE_DIR="$CACHE_DIR/pip"
-export HF_HUB_ENABLE_HF_TRANSFER=1
+export HF_HUB_ENABLE_HF_TRANSFER=0
 
 # Instalar dependências
 log "📦 Instalando dependências..."
@@ -100,6 +100,10 @@ python3 -m pip install numpy scipy joblib threadpoolctl pydantic python-dotenv r
 
 info "📚 Instalando ML..."
 python3 -m pip install datasets sentence-transformers scikit-learn
+
+# Instalar hf_transfer para downloads rápidos (opcional)
+info "🚀 Instalando hf_transfer (opcional)..."
+python3 -m pip install hf_transfer || warning "⚠️ hf_transfer não instalado (opcional)"
 
 # Tentar vLLM (opcional)
 info "⚡ Tentando instalar vLLM (opcional)..."
@@ -143,8 +147,10 @@ EOF
 # Baixar modelo base
 log "📥 Baixando modelo base..."
 python3 -c "
-from transformers import AutoTokenizer, AutoModelForCausalLM
 import os
+os.environ['HF_HUB_ENABLE_HF_TRANSFER'] = '0'  # Desabilitar hf_transfer
+
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 cache_dir = '$CACHE_DIR/huggingface'
 model_name = 'gpt2-medium'
@@ -157,9 +163,13 @@ try:
 except Exception as e:
     print(f'⚠️ Erro: {e}')
     # Fallback para GPT-2 básico
-    tokenizer = AutoTokenizer.from_pretrained('gpt2', cache_dir=cache_dir)
-    model = AutoModelForCausalLM.from_pretrained('gpt2', cache_dir=cache_dir)
-    print('✅ GPT-2 básico baixado como fallback!')
+    try:
+        tokenizer = AutoTokenizer.from_pretrained('gpt2', cache_dir=cache_dir)
+        model = AutoModelForCausalLM.from_pretrained('gpt2', cache_dir=cache_dir)
+        print('✅ GPT-2 básico baixado como fallback!')
+    except Exception as e2:
+        print(f'❌ Erro com GPT-2 básico: {e2}')
+        print('💡 Continuando sem modelo pré-baixado...')
 "
 
 # Verificar se servidores existem

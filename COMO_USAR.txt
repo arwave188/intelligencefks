@@ -1,27 +1,17 @@
 ============================================================================
-🔥🔥🔥 ARSENAL DE GUERRA - COMO USAR NO RUNPOD B200 180GB 🔥🔥🔥
+🔥🔥🔥 ARSENAL DE GUERRA - COMO USAR B200 180GB 🔥🔥🔥
 ============================================================================
-📋 GUIA ULTRA-SIMPLES - APENAS 2 COMANDOS!
+📋 ULTRA-SIMPLES - APENAS 2 COMANDOS!
 💀 AUTOR: FULANOKS*CODER - Arsenal de Guerra Digital
 ============================================================================
 
 🚀 PASSO 1: NO RUNPOD (Terminal do Pod)
 ============================================================================
 
-Abra o terminal do seu pod RunPod e execute:
+git clone https://github.com/arwave188/ai-dev.git && cd ai-dev && ./start.sh
 
-git clone https://github.com/arwave188/ai-dev.git && cd ai-dev && ./install_fix.sh
-
-⏳ Aguarde 5-10 minutos (download e instalação automática)
-✅ Quando terminar, você verá "ARSENAL B200 180GB PRONTO PARA GUERRA DIGITAL!"
-
-🚨 SE DER ERRO DE DEPENDÊNCIAS:
-   Use o script corrigido: ./install_fix.sh
-   (Resolve conflitos de dependências automaticamente)
-
-🚨 SE DER ERRO "No module named 'joblib'":
-   Execute: ./fix_joblib.sh
-   (Corrige dependências faltantes do scikit-learn)
+⏳ Aguarde 5-10 minutos (instala + configura + inicia TUDO)
+✅ Quando terminar: "ARSENAL B200 180GB OPERACIONAL!"
 
 ============================================================================
 🎯 PASSO 2: NO SEU PC (Continue VSCode)
@@ -75,26 +65,14 @@ RUNPOD POD ID - É a ÚNICA coisa que você precisa saber!
 🚨 TROUBLESHOOTING RÁPIDO
 ============================================================================
 
-❌ "ERRO DE DEPENDÊNCIAS" (ResolutionImpossible):
-   ./install_fix.sh (script corrigido)
-
-❌ "No module named 'joblib'":
-   ./fix_joblib.sh (correção rápida)
+❌ "QUALQUER ERRO":
+   ./start.sh (script único que resolve tudo)
 
 ❌ "Continue não conecta":
    python3 arsenal_auto.py
 
-❌ "Servidor não inicia":
-   ./install_fix.sh
-
-❌ "Erro de GPU":
-   nvidia-smi (verificar se B200 está ativa)
-
-❌ "Pod não responde":
-   Verificar se pod está rodando no painel RunPod
-
-❌ "Conflitos de versão":
-   ./install_fix.sh (instala por etapas)
+❌ "Verificar GPU":
+   nvidia-smi
 
 ============================================================================
 🔥 PERFORMANCE B200 180GB SUPREMA
@@ -117,10 +95,10 @@ RUNPOD POD ID - É a ÚNICA coisa que você precisa saber!
 💀 RESUMO ULTRA-SIMPLES
 ============================================================================
 
-1. NO RUNPOD: git clone ... && ./install.sh
+1. NO RUNPOD: git clone ... && ./start.sh
 2. NO PC: python3 arsenal_auto.py
 3. INFORMAR: Pod ID quando solicitado
-4. USAR: Continue VSCode com comandos /malware, /exploit, etc.
+4. USAR: Continue VSCode
 
 🔥 SÓ ISSO! ARSENAL B200 180GB FUNCIONANDO! 🔥
 
@@ -131,7 +109,7 @@ RUNPOD POD ID - É a ÚNICA coisa que você precisa saber!
 Se algo não funcionar:
 1. Verificar se pod RunPod está ativo
 2. Verificar se B200 está detectada: nvidia-smi
-3. Executar novamente: ./install.sh
+3. Executar novamente: ./start.sh
 4. Reconfigurar Continue: python3 arsenal_auto.py
 
 💀 FULANOKS*CODER - Arsenal de Guerra Digital
