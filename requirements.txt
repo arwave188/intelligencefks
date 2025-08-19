@@ -1,45 +1,109 @@
-# Core dependencies - Modelos Locais Sem Censura
-transformers>=4.41.0
-peft>=0.10.0
-trl>=0.8.0
-datasets>=2.18.0
-qdrant-client>=1.9.0
-sentence-transformers>=2.6.0
-tree-sitter>=0.20.2
-tree-sitter-python>=0.20.4
-tree-sitter-javascript>=0.20.3
-tree-sitter-typescript>=0.20.3
-faiss-cpu>=1.8.0
-docker>=7.0.0
-typer>=0.12.0
-pydantic>=2.7.0
-rich>=13.7.0
-pytest>=8.1.0
-coverage>=7.5.0
-ruff>=0.4.0
-mypy>=1.10.0
-python-dotenv>=1.0.1
-bitsandbytes
-torch>=2.0.0
-accelerate>=0.20.0
-scipy>=1.10.0
-numpy>=1.24.0
-requests>=2.31.0
-pyyaml>=6.0.0
+# ============================================================================
+# 🔥 ARSENAL DE GUERRA - REQUIREMENTS OTIMIZADO PARA RUNPOD A100 80GB
+# DeepSeek-Coder-V2.5 (70B) - Configuração para máxima performance
+# Autor: FULANOKS*CODER - Arsenal de Guerra Digital
+# ============================================================================
 
-# Modelos Locais - DeepSeek e outros sem censura
-ollama>=0.2.0
-llama-cpp-python>=0.2.0
-vllm>=0.4.0
-auto-gptq>=0.7.0
-optimum>=1.18.0
-ctransformers>=0.2.0
+# ============================================================================
+# CORE vLLM & INFERENCE ENGINE (PRIORIDADE MÁXIMA)
+# ============================================================================
+vllm>=0.6.0                    # Engine principal otimizado para A100
+torch>=2.1.0,<2.5.0           # PyTorch otimizado para CUDA 12.x
+torchvision>=0.16.0           # Suporte visual
+torchaudio>=2.1.0             # Suporte áudio
+transformers>=4.45.0          # Transformers mais recente
+tokenizers>=0.19.0            # Tokenizers rápidos
+accelerate>=0.25.0            # Aceleração distribuída
+bitsandbytes>=0.41.0          # Quantização otimizada
 
-# API and web dependencies
-fastapi>=0.111.0
-uvicorn>=0.30.0
-sse-starlette>=2.0.0
-httpx>=0.27.0
-pinecone-client>=3.0.0
-uvloop>=0.19.0
-httptools>=0.6.0
+# ============================================================================
+# FASTAPI & WEB SERVER (ALTA PRIORIDADE)
+# ============================================================================
+fastapi>=0.115.0              # Framework web moderno
+uvicorn[standard]>=0.30.0     # Servidor ASGI otimizado
+httpx>=0.27.0                 # Cliente HTTP async
+sse-starlette>=2.1.0          # Server-Sent Events
+python-multipart>=0.0.6      # Upload de arquivos
+websockets>=12.0              # WebSocket support
+
+# ============================================================================
+# MACHINE LEARNING & AI (MÉDIA PRIORIDADE)
+# ============================================================================
+numpy>=1.24.0,<2.0.0         # Computação numérica
+scipy>=1.11.0                # Algoritmos científicos
+scikit-learn>=1.3.0          # ML tradicional
+sentence-transformers>=2.7.0  # Embeddings
+datasets>=2.20.0             # Datasets HuggingFace
+peft>=0.12.0                 # Parameter Efficient Fine-Tuning
+trl>=0.9.0                   # Transformer Reinforcement Learning
+
+# ============================================================================
+# VECTOR DATABASE & RAG (MÉDIA PRIORIDADE)
+# ============================================================================
+qdrant-client>=1.11.0        # Vector DB principal
+faiss-cpu>=1.8.0             # Busca vetorial local
+pinecone-client>=5.0.0       # Pinecone cloud
+chromadb>=0.5.0              # ChromaDB alternativo
+
+# ============================================================================
+# CODE ANALYSIS & PARSING (BAIXA PRIORIDADE)
+# ============================================================================
+tree-sitter>=0.21.0          # Parser de código
+tree-sitter-python>=0.21.0   # Python parser
+tree-sitter-javascript>=0.21.0 # JS parser
+tree-sitter-typescript>=0.21.0 # TS parser
+tree-sitter-c>=0.21.0        # C parser
+tree-sitter-cpp>=0.22.0      # C++ parser
+tree-sitter-rust>=0.21.0     # Rust parser
+tree-sitter-go>=0.21.0       # Go parser
+
+# ============================================================================
+# UTILITIES & TOOLS (BAIXA PRIORIDADE)
+# ============================================================================
+pydantic>=2.8.0              # Validação de dados
+python-dotenv>=1.0.1         # Variáveis de ambiente
+requests>=2.32.0             # HTTP requests
+aiofiles>=24.0.0             # Async file operations
+typer>=0.12.0                # CLI framework
+rich>=13.8.0                 # Terminal formatting
+click>=8.1.0                 # CLI utilities
+tqdm>=4.66.0                 # Progress bars
+psutil>=6.0.0                # System monitoring
+
+# ============================================================================
+# DEVELOPMENT & TESTING (OPCIONAL)
+# ============================================================================
+pytest>=8.3.0                # Testing framework
+pytest-asyncio>=0.24.0       # Async testing
+coverage>=7.6.0              # Code coverage
+ruff>=0.6.0                  # Linting & formatting
+mypy>=1.11.0                 # Type checking
+black>=24.0.0                # Code formatting
+isort>=5.13.0                # Import sorting
+
+# ============================================================================
+# SECURITY & CRYPTO (OPCIONAL)
+# ============================================================================
+cryptography>=43.0.0         # Criptografia
+bcrypt>=4.2.0                # Password hashing
+pyjwt>=2.9.0                 # JWT tokens
+passlib>=1.7.4               # Password utilities
+
+# ============================================================================
+# SYSTEM & MONITORING (OPCIONAL)
+# ============================================================================
+docker>=7.1.0                # Docker integration
+pyyaml>=6.0.1                # YAML parsing
+toml>=0.10.2                 # TOML parsing
+jsonschema>=4.23.0           # JSON validation
+prometheus-client>=0.21.0    # Metrics
+gpustat>=1.1.1               # GPU monitoring
+
+# ============================================================================
+# RUNPOD SPECIFIC OPTIMIZATIONS
+# ============================================================================
+# Estas dependências são otimizadas especificamente para RunPod A100
+huggingface-hub>=0.25.0      # HF Hub otimizado
+safetensors>=0.4.0           # Carregamento seguro de tensors
+flash-attn>=2.6.0            # Flash Attention para A100
+xformers>=0.0.27             # Memory efficient transformers

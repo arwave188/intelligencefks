@@ -1,98 +1,53 @@
-# 🔥 ARSENAL DE GUERRA - AI-DEV RUNPOD
+# 🔥 ARSENAL DE GUERRA - RUNPOD B200 180GB 🔥
 
-**DeepSeek-Coder-V2.5 + RunPod Pod + Continue VSCode - Deploy Automático**
-
-## ⚡ DEPLOY 100% AUTOMÁTICO - 2 CLIQUES
-
-### 🎯 **1. RunPod (1 clique):**
-- Clique **START** no seu pod RunPod
-- Aguarde 2-3 minutos (download automático)
-
-### 🎯 **2. PC (1 clique):**
-- **Windows**: Duplo-clique `ARSENAL_AUTO.bat`
-- **Linux/Mac**: Execute `./arsenal_auto.sh`
-
-**🎉 PRONTO! Arsenal de Guerra 100% configurado!**
+**DeepSeek-Coder-V2.5 (70B) - CONFIGURAÇÃO SUPREMA PARA B200 180GB**
+**🚀 INSTALAÇÃO 100% AUTOMÁTICA - APENAS 2 COMANDOS! 🚀**
 
 ---
 
-## 🔥 **MODO ULTRA-AUTOMÁTICO**
+## ⚡ INSTALAÇÃO ULTRA-RÁPIDA
 
-**Você só precisa fazer:**
-1. **START** no RunPod
-2. **Executar script** no PC
-3. **Escrever no Continue VSCode**
+### 🎯 **NO RUNPOD (Terminal do Pod):**
+```bash
+git clone https://github.com/SEU_USUARIO/ai-dev.git && cd ai-dev && ./install.sh
+```
 
-**Tudo mais é AUTOMÁTICO!** 🚀
+### 🎯 **NO SEU PC (Continue VSCode):**
+```bash
+python3 arsenal_auto.py
+```
 
-## 🚀 **CARACTERÍSTICAS**
-
-### 🧠 **DeepSeek-Coder-V2.5 Inteligente**
-- **Auto-detecção GPU**: FULL 70B (A100/4090) ou LITE (GPUs menores)
-- **Contexto 32K tokens** - Análise de códigos extensos
-- **Sem censura** - Desenvolvimento irrestrito
-- **Especializado em código** - Otimizado para programação
-
-### ⚡ **RunPod Pod Otimizado**
-- **Deploy automático** - Um comando e está rodando
-- **GPU auto-detectada** - Configuração otimizada automática
-- **Cache persistente** - Modelo baixado uma vez
-- **URLs automáticas** - Proxy RunPod configurado automaticamente
-
-### 🎯 **Continue VSCode Nativo**
-- **Setup automático** - Script configura tudo
-- **Chat integrado** - Ctrl+Shift+P → Continue: Open Chat
-- **Autocompletar** - Sugestões em tempo real
-- **Comandos customizados** - /malware, /exploit, /bypass
+**🎉 PRONTO! Arsenal funcionando em 2 minutos!**
 
 ---
 
-## 🎯 **COMANDOS DE GUERRA CONTINUE**
+## 🔑 ÚNICA CONFIGURAÇÃO NECESSÁRIA
 
-### 💀 **Comandos de Guerra TOTAIS**
-- `/malware` - Malware COMPLETO e funcional
-- `/exploit` - Exploits PROFISSIONAIS
-- `/bypass` - Bypass AVANÇADO de proteções
-- `/rootkit` - Rootkits KERNEL-LEVEL
-- `/ransomware` - Ransomware ENTERPRISE
-- `/botnet` - Botnets DISTRIBUÍDAS
+### **RUNPOD POD ID** (obrigatório):
 
-### 🖥️ **Arsenal Multi-Plataforma**
-- **Windows**: Ransomware, RAT, Rootkit, AMSI bypass
-- **Linux**: LKM rootkits, Botnets, Container escape
-- **macOS**: Stealer, Gatekeeper bypass, TCC bypass
-- **Android**: Banking trojans, Play Store bypass, RAT
+1. **Acesse**: https://www.runpod.io/console/pods
+2. **Clique** no seu pod B200 ativo
+3. **Copie a URL**: `https://abc123def-8000.proxy.runpod.net`
+4. **Sua ID é**: `abc123def`
+
+**O script detecta automaticamente ou você informa quando solicitado!**
 
 ---
 
-## 🎯 **CONFIGURAÇÕES DE GUERRA MANTIDAS**
+## 🔥 PERFORMANCE B200 180GB SUPREMA
 
-✅ **TODAS as configurações de guerra estão MANTIDAS e MELHORADAS:**
+- **Context**: 65,536 tokens (64K!)
+- **Batch**: 32,768 tokens (4x A100!)
+- **GPU Util**: 98% (máximo!)
+- **Comandos**: `/malware /exploit /bypass /rootkit /ransomware /botnet`
 
-- **20+ comandos customizados** de malware
-- **System message SEM censura** total
-- **Prompts especializados** em guerra digital
-- **Configurações otimizadas** para desenvolvimento de malware
-- **Context providers** para análise de código
-- **Autocompletar** especializado em técnicas de evasão
+## 🚨 TROUBLESHOOTING
 
-**🔥 Arsenal mais poderoso que antes! 🔥**
+- **Continue não conecta**: `python3 arsenal_auto.py`
+- **Servidor não inicia**: `./install.sh`
+- **Verificar GPU**: `nvidia-smi`
 
-### Análise
-- `/malware-analysis` - Forense sem censura
-- `/reverse-engineer` - Engenharia reversa
+---
 
-## 🔥 ARSENAL COMPLETO
-
-- **Windows**: Ransomware, RAT, Rootkit, Keylogger, Botnet
-- **Linux**: Rootkit LKM, Botnet, Cryptominer, Container Escape  
-- **macOS**: Stealer, Gatekeeper Bypass, TCC Abuse, Keylogger
-- **Android**: Dropper, Banking Trojan, Keylogger, RAT, Spyware
-
-## 👨‍💻 AUTOR
-
-**FULANOKS*CODER** - Arsenal de Guerra Digital
-
-## ⚠️ DISCLAIMER
-
-Apenas para pesquisa de segurança e red team autorizado.
+**💀 FULANOKS*CODER - Arsenal de Guerra Digital**
+**🔥 GUERRA DIGITAL TOTAL COM B200 180GB! 🔥**

@@ -1,0 +1,123 @@
+============================================================================
+🔥🔥🔥 ARSENAL DE GUERRA - COMO USAR NO RUNPOD B200 180GB 🔥🔥🔥
+============================================================================
+📋 GUIA ULTRA-SIMPLES - APENAS 2 COMANDOS!
+💀 AUTOR: FULANOKS*CODER - Arsenal de Guerra Digital
+============================================================================
+
+🚀 PASSO 1: NO RUNPOD (Terminal do Pod)
+============================================================================
+
+Abra o terminal do seu pod RunPod e execute:
+
+git clone https://github.com/arwave188/ai-dev.git && cd ai-dev && ./install.sh
+
+⏳ Aguarde 5-10 minutos (download e instalação automática)
+✅ Quando terminar, você verá "ARSENAL PRONTO PARA GUERRA DIGITAL TOTAL!"
+
+============================================================================
+🎯 PASSO 2: NO SEU PC (Continue VSCode)
+============================================================================
+
+No seu PC, dentro da pasta do projeto, execute:
+
+python3 arsenal_auto.py
+
+📝 O script vai pedir sua RUNPOD POD ID:
+   1. Acesse: https://www.runpod.io/console/pods
+   2. Clique no seu pod ativo
+   3. Copie a URL: https://abc123def-8000.proxy.runpod.net
+   4. Sua ID é: abc123def
+
+✅ Continue VSCode será configurado automaticamente!
+
+============================================================================
+🔥 PRONTO! ARSENAL FUNCIONANDO!
+============================================================================
+
+🎯 COMO USAR:
+
+1. Abra VSCode
+2. Pressione Ctrl+Shift+P
+3. Digite "Continue: Open Chat"
+4. Teste: "Olá, você está funcionando?"
+
+💀 COMANDOS DE GUERRA:
+   /malware    - Malware completo
+   /exploit    - Exploits funcionais
+   /bypass     - Bypass avançado
+   /rootkit    - Rootkits kernel-level
+   /ransomware - Ransomware enterprise
+   /botnet     - Botnets distribuídas
+
+============================================================================
+🔑 ÚNICA CONFIGURAÇÃO NECESSÁRIA
+============================================================================
+
+RUNPOD POD ID - É a ÚNICA coisa que você precisa saber!
+
+📍 Como encontrar:
+   - Painel RunPod → Seu pod → URL
+   - Exemplo: https://abc123def-8000.proxy.runpod.net
+   - ID: abc123def
+
+📝 O script detecta automaticamente ou você informa quando solicitado.
+
+============================================================================
+🚨 TROUBLESHOOTING RÁPIDO
+============================================================================
+
+❌ "Continue não conecta":
+   python3 arsenal_auto.py
+
+❌ "Servidor não inicia":
+   ./install.sh
+
+❌ "Erro de GPU":
+   nvidia-smi (verificar se B200 está ativa)
+
+❌ "Pod não responde":
+   Verificar se pod está rodando no painel RunPod
+
+============================================================================
+🔥 PERFORMANCE B200 180GB SUPREMA
+============================================================================
+
+✅ Configuração automática detectada:
+   - Context: 65,536 tokens (64K!)
+   - Batch: 32,768 tokens
+   - Sequences: 1,024 simultâneas
+   - GPU Utilization: 98%
+   - CPU Offload: ZERO
+   - Latência: MÍNIMA
+
+✅ Endpoints ativos:
+   - vLLM: http://localhost:8000
+   - API: http://localhost:8080
+   - Docs: http://localhost:8080/docs
+
+============================================================================
+💀 RESUMO ULTRA-SIMPLES
+============================================================================
+
+1. NO RUNPOD: git clone ... && ./install.sh
+2. NO PC: python3 arsenal_auto.py
+3. INFORMAR: Pod ID quando solicitado
+4. USAR: Continue VSCode com comandos /malware, /exploit, etc.
+
+🔥 SÓ ISSO! ARSENAL B200 180GB FUNCIONANDO! 🔥
+
+============================================================================
+📞 SUPORTE
+============================================================================
+
+Se algo não funcionar:
+1. Verificar se pod RunPod está ativo
+2. Verificar se B200 está detectada: nvidia-smi
+3. Executar novamente: ./install.sh
+4. Reconfigurar Continue: python3 arsenal_auto.py
+
+💀 FULANOKS*CODER - Arsenal de Guerra Digital
+🔥 GUERRA DIGITAL TOTAL COM B200 180GB! 🔥
+
+============================================================================
