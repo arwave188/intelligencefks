@@ -31,6 +31,8 @@ websockets
 # ============================================================================
 numpy
 scipy
+joblib
+threadpoolctl
 scikit-learn
 sentence-transformers
 datasets

@@ -110,7 +110,7 @@ python3 -m pip install fastapi "uvicorn[standard]" httpx sse-starlette python-mu
 
 # Etapa 5: ML e utilities
 info "📊 Etapa 5: Instalando ML e utilities..."
-python3 -m pip install numpy scipy pydantic python-dotenv requests rich tqdm psutil
+python3 -m pip install numpy scipy joblib threadpoolctl pydantic python-dotenv requests rich tqdm psutil
 
 # Etapa 6: Datasets e embeddings
 info "📚 Etapa 6: Instalando datasets e embeddings..."

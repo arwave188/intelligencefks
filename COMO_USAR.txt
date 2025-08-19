@@ -19,6 +19,10 @@ git clone https://github.com/arwave188/ai-dev.git && cd ai-dev && ./install_fix.
    Use o script corrigido: ./install_fix.sh
    (Resolve conflitos de dependências automaticamente)
 
+🚨 SE DER ERRO "No module named 'joblib'":
+   Execute: ./fix_joblib.sh
+   (Corrige dependências faltantes do scikit-learn)
+
 ============================================================================
 🎯 PASSO 2: NO SEU PC (Continue VSCode)
 ============================================================================
