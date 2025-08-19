@@ -10,10 +10,14 @@
 
 Abra o terminal do seu pod RunPod e execute:
 
-git clone https://github.com/arwave188/ai-dev.git && cd ai-dev && ./install.sh
+git clone https://github.com/arwave188/ai-dev.git && cd ai-dev && ./install_fix.sh
 
 ⏳ Aguarde 5-10 minutos (download e instalação automática)
-✅ Quando terminar, você verá "ARSENAL PRONTO PARA GUERRA DIGITAL TOTAL!"
+✅ Quando terminar, você verá "ARSENAL B200 180GB PRONTO PARA GUERRA DIGITAL!"
+
+🚨 SE DER ERRO DE DEPENDÊNCIAS:
+   Use o script corrigido: ./install_fix.sh
+   (Resolve conflitos de dependências automaticamente)
 
 ============================================================================
 🎯 PASSO 2: NO SEU PC (Continue VSCode)
@@ -67,17 +71,23 @@ RUNPOD POD ID - É a ÚNICA coisa que você precisa saber!
 🚨 TROUBLESHOOTING RÁPIDO
 ============================================================================
 
+❌ "ERRO DE DEPENDÊNCIAS" (ResolutionImpossible):
+   ./install_fix.sh (script corrigido)
+
 ❌ "Continue não conecta":
    python3 arsenal_auto.py
 
 ❌ "Servidor não inicia":
-   ./install.sh
+   ./install_fix.sh
 
 ❌ "Erro de GPU":
    nvidia-smi (verificar se B200 está ativa)
 
 ❌ "Pod não responde":
    Verificar se pod está rodando no painel RunPod
+
+❌ "Conflitos de versão":
+   ./install_fix.sh (instala por etapas)
 
 ============================================================================
 🔥 PERFORMANCE B200 180GB SUPREMA

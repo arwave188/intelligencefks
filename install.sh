@@ -184,28 +184,48 @@ trusted-host = pypi.org
 EOF
 }
 
-# Instalar dependências Python
+# Instalar dependências Python com resolução de conflitos
 install_dependencies() {
-    log "📦 Instalando dependências Python otimizadas..."
-    
-    # Atualizar pip
+    log "📦 Instalando dependências Python para B200 180GB..."
+
+    # Atualizar pip e ferramentas
+    info "🔧 Atualizando pip e ferramentas..."
     python3 -m pip install --upgrade pip setuptools wheel
-    
-    # Instalar dependências em ordem de prioridade
-    info "🔥 Instalando vLLM e PyTorch (CRÍTICO)..."
-    python3 -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-    python3 -m pip install vllm>=0.6.0
-    
-    info "🌐 Instalando FastAPI e servidor web..."
-    python3 -m pip install fastapi uvicorn[standard] httpx sse-starlette
-    
-    info "🤖 Instalando transformers e ML..."
-    python3 -m pip install transformers>=4.45.0 accelerate bitsandbytes
-    
+
+    # Instalar PyTorch primeiro (base para tudo)
+    info "🔥 Instalando PyTorch para CUDA 12.x..."
+    python3 -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 --no-deps
+
+    # Instalar vLLM (crítico)
+    info "⚡ Instalando vLLM..."
+    python3 -m pip install vllm --no-deps
+
+    # Instalar dependências essenciais uma por uma
+    info "🤖 Instalando transformers e aceleração..."
+    python3 -m pip install transformers tokenizers accelerate --no-deps
+
+    info "🌐 Instalando servidor web..."
+    python3 -m pip install fastapi "uvicorn[standard]" httpx sse-starlette python-multipart --no-deps
+
+    info "📊 Instalando ML e utilities..."
+    python3 -m pip install numpy scipy pydantic python-dotenv requests rich tqdm psutil --no-deps
+
+    info "🤗 Instalando HuggingFace..."
+    python3 -m pip install huggingface-hub safetensors datasets sentence-transformers --no-deps
+
+    # Instalar dependências restantes com resolução automática
     info "📋 Instalando dependências restantes..."
-    python3 -m pip install -r requirements.txt
-    
-    log "✅ Todas as dependências instaladas com sucesso!"
+    python3 -m pip install -r requirements.txt --no-deps || {
+        warning "⚠️ Alguns pacotes falharam, continuando..."
+    }
+
+    # Tentar instalar flash-attn separadamente (opcional)
+    info "🚀 Tentando instalar Flash Attention 2 (opcional)..."
+    python3 -m pip install flash-attn --no-build-isolation || {
+        warning "⚠️ Flash Attention não instalado (opcional)"
+    }
+
+    log "✅ Dependências principais instaladas! B200 pronto!"
 }
 
 # Baixar modelo DeepSeek

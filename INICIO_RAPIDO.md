@@ -7,11 +7,13 @@
 ## 🚀 PASSO 1: NO RUNPOD (Terminal do Pod)
 
 ```bash
-git clone https://github.com/SEU_USUARIO/ai-dev.git && cd ai-dev && ./install.sh
+git clone https://github.com/SEU_USUARIO/ai-dev.git && cd ai-dev && ./install_fix.sh
 ```
 
-⏳ **Aguarde 5-10 minutos** (instalação automática)  
-✅ **Quando terminar**: "ARSENAL B200 180GB PRONTO PARA GUERRA DIGITAL TOTAL!"
+⏳ **Aguarde 5-10 minutos** (instalação automática)
+✅ **Quando terminar**: "ARSENAL B200 180GB PRONTO PARA GUERRA DIGITAL!"
+
+🚨 **Se der erro de dependências**: Use `./install_fix.sh` (resolve conflitos automaticamente)
 
 ---
 
@@ -60,9 +62,10 @@ python3 arsenal_auto.py
 
 ## 🚨 TROUBLESHOOTING
 
-❌ **"Continue não conecta"**: `python3 arsenal_auto.py`  
-❌ **"Servidor não inicia"**: `./install.sh`  
-❌ **"Erro de GPU"**: `nvidia-smi`  
+❌ **"Erro de dependências"**: `./install_fix.sh`
+❌ **"Continue não conecta"**: `python3 arsenal_auto.py`
+❌ **"Servidor não inicia"**: `./install_fix.sh`
+❌ **"Erro de GPU"**: `nvidia-smi`
 
 ---
 
@@ -84,7 +87,7 @@ python3 arsenal_auto.py
 
 ## 💀 RESUMO
 
-1. **NO RUNPOD**: `git clone ... && ./install.sh`
+1. **NO RUNPOD**: `git clone ... && ./install_fix.sh`
 2. **NO PC**: `python3 arsenal_auto.py`
 3. **INFORMAR**: Pod ID
 4. **USAR**: Continue VSCode
