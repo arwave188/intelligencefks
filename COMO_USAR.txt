@@ -78,6 +78,9 @@ RUNPOD POD ID - É a ÚNICA coisa que você precisa saber!
 ❌ "ERRO DE DEPENDÊNCIAS" (ResolutionImpossible):
    ./install_fix.sh (script corrigido)
 
+❌ "No module named 'joblib'":
+   ./fix_joblib.sh (correção rápida)
+
 ❌ "Continue não conecta":
    python3 arsenal_auto.py
 
