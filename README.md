@@ -9,7 +9,7 @@
 
 ### 🎯 **NO RUNPOD (Terminal do Pod):**
 ```bash
-git clone https://github.com/SEU_USUARIO/ai-dev.git && cd ai-dev && ./install.sh
+git clone https://github.com/SEU_USUARIO/ai-dev.git && cd ai-dev && ./start.sh
 ```
 
 ### 🎯 **NO SEU PC (Continue VSCode):**
@@ -44,7 +44,7 @@ python3 arsenal_auto.py
 ## 🚨 TROUBLESHOOTING
 
 - **Continue não conecta**: `python3 arsenal_auto.py`
-- **Servidor não inicia**: `./install.sh`
+- **Servidor não inicia**: `./start.sh`
 - **Verificar GPU**: `nvidia-smi`
 
 ---
